@@ -6,8 +6,8 @@
 % http://danceswithcode.net/engineeringnotes/geodetic_to_ecef/geodetic_to_ecef.html
 
 function ecef = wgs_to_ecef(wgs)
-    
-    lat = wgs(1)*pi/180;
+    % assuming for now the wgs coords come in as radians
+    lat = wgs(1)*pi/180; 
     long = wgs(2)*pi/180;
     height = wgs(3)*pi/180;
     

@@ -9,7 +9,7 @@
 % Traffic velocity in East [kts], North [kts], Up [ft/minute]
 
 % Outputs:
-% Well?clear violation discrete (TRUE or FALSE; 1 or 0);
+% Well-clear violation discrete (TRUE or FALSE; 1 or 0);
 % TA discrete (TRUE or FALSE; 1 or 0);
 % RA discrete (TRUE or FALSE; 1 or 0);
 
@@ -20,12 +20,17 @@ clc, clear
 
 load('Profile1.mat')
 
-profile.o_signals = [];
-profile.t_signals = [];
+profile.time = []; % not sure what this is used for yet.
 
+% fill the signal vectors
 for n = 1:6
-    
+    profile.o_signals(:,n) = o_profile(:,n);
+    profile.t_signals(:,n) = t_profile(:,n);
 end
+
+% process each signal
+s = profile.o_signals(1,:);
+sim('project')
 
 
 
