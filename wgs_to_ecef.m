@@ -7,9 +7,9 @@
 
 function ecef = wgs_to_ecef(wgs)
     % assuming for now the wgs coords come in as radians
-    lat = wgs(1)*pi/180; 
-    long = wgs(2)*pi/180;
-    height = wgs(3)*pi/180;
+    lat = wgs(1);
+    long = wgs(2);
+    height = wgs(3);
     
     a = 6378137.0; % earth semimajor axis in meters
     e2 = 6.6943799901377997e-3;  %WGS-84 first eccentricity squared

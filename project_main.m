@@ -29,7 +29,9 @@ for n = 1:6
 end
 
 % process each signal
-s = profile.o_signals(1,:);
+s = zeros(12,1);
+s(1:6) = profile.o_signals(1,:);
+s(7:12) = profile.t_signals(1,:);
 sim('project')
 
 
