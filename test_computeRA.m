@@ -1,4 +1,4 @@
-% test of computeRA
+% test of computeRA, TA and WC
 
 clear, clc
 
@@ -9,7 +9,7 @@ clear, clc
 
 load('Profile1.mat')
 
-profile.time = []; % not sure what this is used for yet.
+profile.time = [];
 
 % fill the signal vectors
 for n = 1:6
@@ -22,7 +22,7 @@ end
 % s(1:6) = profile.o_signals(1,:);
 % s(7:12) = profile.t_signals(1,:);
 
-RAs_TAs = zeros(120,2);
+RAs_WCs_TAs = zeros(120,3);
 for n = 1:120
     
     ownship = profile.o_signals(n,1:3);
@@ -30,13 +30,12 @@ for n = 1:120
     target = profile.t_signals(n,1:3);
     target_v = profile.t_signals(n,4:6);
     
-    p180 = pi/180;
     ftom = 0.3048;
-    o_lat = ownship(1)*p180;
-    o_long = ownship(2)*p180;
+    o_lat = ownship(1)*pi/180;
+    o_long = ownship(2)*pi/180;
     o_alt = ownship(3)*ftom;
-    t_lat = target(1)*p180;
-    t_long = target(2)*p180;
+    t_lat = target(1)*pi/180;
+    t_long = target(2)*pi/180;
     t_alt = target(3)*ftom;
 
     own_llh = [o_lat o_long o_alt];
@@ -51,7 +50,10 @@ for n = 1:120
 
     RA = computeRA([s_vector r_vector ra_thresh]);
     TA = computeTA([s_vector r_vector ta_thresh]);
-    RAs_TAs(n,1) = RA;
-    RAs_TAs(n,2) = TA;
+    WC = computeWC([s_vector r_vector]);
+    RAs_WCs_TAs(n,1) = RA;
+    RAs_WCs_TAs(n,2) = WC;
+    RAs_WCs_TAs(n,3) = TA;
+    
 end
 

@@ -10,7 +10,7 @@ function wc_discrete = computeWC(inputs)
     DMOD = 4000*0.3048;
     ZTHR = 700;
     
-    s_dot = dot(s_vector(1),s_vector(2));
+    s_dot = dot([s_vector(1) s_vector(2)],[s_vector(1) s_vector(2)]);
     s_sqrt = sqrt(s_dot);
     
     s_r_dot = dot([s_vector(1) s_vector(2)],[r_vector(1) r_vector(2)]);

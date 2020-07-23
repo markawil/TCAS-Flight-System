@@ -16,7 +16,7 @@ function ra_discrete = computeRA(inputs)
     ALIM = inputs(11); % not used
     HMD = inputs(12);  % not used
     
-    s_dot = dot(s_vector(1),s_vector(2));
+    s_dot = dot([s_vector(1) s_vector(2)],[s_vector(1) s_vector(2)]);
     s_sqrt = sqrt(s_dot);
     
     s_r_dot = dot([s_vector(1) s_vector(2)],[r_vector(1) r_vector(2)]);

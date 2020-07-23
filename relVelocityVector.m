@@ -11,7 +11,7 @@ function r_vector = relVelocityVector(velocities)
     traf_vel_north = velocities(5);
     traf_vel_up = velocities(6);
     
-    r_vector(1) = own_vel_east - traf_vel_east;
-    r_vector(2) = own_vel_north - traf_vel_north;
-    r_vector(3) = own_vel_up - traf_vel_up;
+    r_vector(1) = traf_vel_east - own_vel_east;
+    r_vector(2) = traf_vel_north - own_vel_north;
+    r_vector(3) = traf_vel_up - own_vel_up;
 end

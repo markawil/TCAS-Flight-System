@@ -5,17 +5,17 @@
 
 function result = RA_thresholds(alt)
     if (alt > 1000) && (alt <= 2350)
-        result = [3 15 0.20 600 300 0.4];
+        result = [3 15 370.4 600 300 740.8];
     elseif (alt > 2350) && (alt <= 5000)
-        result = [4 20 0.35 600 300 0.57];
+        result = [4 20 648.2 600 300 1055.64];
     elseif (alt > 5000) && (alt <= 10000)
-        result = [5 25 0.55 600 350 0.74];
+        result = [5 25 1018.6 600 350 1370.48];
     elseif (alt > 10000) && (alt <= 20000)
-        result = [6 30 0.80 600 400 0.82];
+        result = [6 30 1481.6 600 400 1518.64];
     elseif (alt > 20000) && (alt <= 42000)
-        result = [7 35 1.10 700 600 0.98];
+        result = [7 35 2037.2 700 600 1814.96];
     elseif (alt > 42000)
-        result = [7 35 1.10 800 700 0.98];
+        result = [7 35 2037.2 800 700 1814.96];
     else
         result = zeros(1,6);
     end
