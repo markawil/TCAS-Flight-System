@@ -4,8 +4,11 @@
 
 function ra_discrete = computeRA(inputs)
 
+    % Separation and Relative Velocity vectors
     s_vector = inputs(1:3);
     r_vector = inputs(4:6);
+    
+    % Thresholds
     SL = inputs(7);    % not used
     TAU = inputs(8);
     DMOD = inputs(9);

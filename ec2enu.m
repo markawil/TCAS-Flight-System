@@ -5,9 +5,9 @@
 
 function enu = ec2enu(ece)
 
-orgece = ece(4:6)';
-orgllh = ece(7:9)';
-ece = ece(1:3)';
+orgece = ece(4:6);
+orgllh = ece(7:9);
+ece = ece(1:3);
 
 difece = ece - orgece;   % difference between coordinate
                          % origins
