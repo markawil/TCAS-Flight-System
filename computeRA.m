@@ -37,6 +37,11 @@ function ra_discrete = computeRA(inputs)
     v_cond4 = v_cond2 && v_cond3;
     v_cond = v_cond1 || v_cond4;
     
-    ra_discrete = h_cond && v_cond;
+    ra = h_cond && v_cond;
+    if ra
+        ra_discrete = 1;
+    else
+        ra_discrete = 0;
+    end
 
 end

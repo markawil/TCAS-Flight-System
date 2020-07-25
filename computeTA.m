@@ -4,8 +4,11 @@
 
 function ta_discrete = computeTA(inputs)
 
+    % Separation and Relative Velocity vectors
     s_vector = inputs(1:3);
     r_vector = inputs(4:6);
+    
+    % Thresholds
     SL = inputs(7);    % not used
     TAU = inputs(8);
     DMOD = inputs(9);
@@ -34,6 +37,11 @@ function ta_discrete = computeTA(inputs)
     v_cond4 = v_cond2 && v_cond3;
     v_cond = v_cond1 || v_cond4;
     
-    ta_discrete = h_cond && v_cond;
+    ta = h_cond && v_cond;
+    if ta
+        ta_discrete = 1;
+    else
+        ta_discrete = 0;
+    end
     
 end

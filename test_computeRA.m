@@ -1,4 +1,4 @@
-% test of computeRA, TA and WC
+% Runs the entire system with the given Profile1 model data
 
 clear, clc
 
@@ -43,7 +43,7 @@ for n = 1:120
     own_ecf = wgs_to_ecef(own_llh);
     tar_ecf = wgs_to_ecef(t_llh);
 
-    s_vector = ec2enu([tar_ecf own_ecf own_llh]);
+    s_vector = ec2enu([tar_ecf own_ecf own_llh]');
     r_vector = relVelocityVector([own_vel target_v]);
     ra_thresh = RA_thresholds(ownship(3));
     ta_thresh = TA_thresholds(ownship(3));

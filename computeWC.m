@@ -4,8 +4,11 @@
 
 function wc_discrete = computeWC(inputs)
     
+    % Separation and Relative Velocity vectors
     s_vector = inputs(1:3);
     r_vector = inputs(4:6);
+    
+    % Thresholds for WC only
     TAU = 35;
     DMOD = 4000*0.3048;
     ZTHR = 700;
@@ -31,6 +34,11 @@ function wc_discrete = computeWC(inputs)
     v_cond4 = v_cond2 && v_cond3;
     v_cond = v_cond1 || v_cond4;
     
-    wc_discrete = h_cond && v_cond;
- 
+    wc = h_cond && v_cond;
+    if wc
+        wc_discrete = 1;
+    else
+        wc_discrete = 0;
+    end
+    
 end

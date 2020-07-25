@@ -20,19 +20,17 @@ clc, clear
 
 load('Profile1.mat')
 
-profile.time = []; % not sure what this is used for yet.
+profile.time = [];
+profile.signals(1).values = ...
+    [   o_profile(:,1) o_profile(:,2) o_profile(:,3) ...
+        o_profile(:,4) o_profile(:,5) o_profile(:,6) ...
+        t_profile(:,1) t_profile(:,2) t_profile(:,3) ...
+        t_profile(:,4) t_profile(:,5) t_profile(:,6) ...
+    ];
+profile.dimensions = 12;
 
-% fill the signal vectors
-for n = 1:6
-    profile.o_signals(:,n) = o_profile(:,n);
-    profile.t_signals(:,n) = t_profile(:,n);
-end
-
-% process each signal
-s = zeros(12,1);
-s(1:6) = profile.o_signals(1,:);
-s(7:12) = profile.t_signals(1,:);
-sim('project')
+s = profile.signals.values(30,:);
+%sim('project')
 
 
 
