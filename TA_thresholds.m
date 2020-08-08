@@ -17,6 +17,6 @@ function result = TA_thresholds(alt)
     elseif (alt > 42000)
         result = [7 48 2407.6 1200 700 1814.96];
     else
-        result = zeros(1,6)';
+        result = zeros(1,6);
     end
 end

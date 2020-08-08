@@ -1,11 +1,10 @@
+% Mark Wilkinson
+% EE 6083 Aviation Software
+% Module 9-11 Project
+
 % Runs the entire system with the given Profile1 model data
 
 clear, clc
-
-% ownship = [55 24 8000];
-% own_vel = [3 2 0];
-% target = [54.5 21 8000];
-% target_v = [3 2 0];
 
 load('Profile1.mat')
 
@@ -23,7 +22,7 @@ end
 % s(7:12) = profile.t_signals(1,:);
 
 RAs_WCs_TAs = zeros(120,3);
-for n = 1:120
+for n = 1:120 % each row is a set of signals
     
     ownship = profile.o_signals(n,1:3);
     own_vel = profile.o_signals(n,4:6);
@@ -56,4 +55,6 @@ for n = 1:120
     RAs_WCs_TAs(n,3) = TA;
     
 end
+
+
 
