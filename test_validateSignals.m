@@ -1,6 +1,8 @@
 % Mark Wilkinson
 % EE 6083 Aviation Software
-% test the validateSignals function
+% test that the validation of signals function returns an expected
+% discrete yes or no if the set of signals meet the requirements criteria
+% for valid processing in the TCAS system.
 
 invalid_lat = 120;
 invalid_long = 200;

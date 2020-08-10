@@ -1,6 +1,7 @@
 % Mark Wilkinson
 % EE 6083 Aviation
-% tests TA_thresholds function.
+% tests that TA thresholds given in the Project document are
+% returned from the TA_thresholds function.
 
 alt0 = 0;
 thresholds0 = TA_thresholds(alt0);

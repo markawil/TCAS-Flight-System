@@ -1,6 +1,7 @@
 % Mark Wilkinson
 % EE 6083 Aviation
-% tests RA_thresholds function.
+% tests that RA thresholds given in the Project document are
+% returned from the RA_thresholds function
 
 alt0 = 0;
 thresholds0 = RA_thresholds(alt0);

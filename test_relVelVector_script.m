@@ -1,6 +1,7 @@
 % Mark Wilkinson
 % EE 6083 Aviation
-% tests the relative velocity vector function
+% tests that the relative velocity vector as described in the Project
+% document can be created and returned given a set of valid inputs.
 
 clear, clc
 

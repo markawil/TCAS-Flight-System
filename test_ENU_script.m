@@ -1,7 +1,8 @@
 % Mark Wilkinson
 % EE 6083 Aviation
 % tests the code and simulink model for converting WGS coordinates
-% and outputting ENU target with ownship for the separation vector.
+% and outputting ENU target with ownship for the separation vector as
+% described in the Project document.
 
 clear, clc
 
