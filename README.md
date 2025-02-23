@@ -5,3 +5,5 @@ Traffic Collision Avoidance System (TCAS) II. The paper on by Munoz
 II.
 
 ![Example diagram of TCAS](https://i.imgur.com/P6ZKe6U.png)
+
+![Simulink model](https://i.imgur.com/yYMO9Ad.png)
